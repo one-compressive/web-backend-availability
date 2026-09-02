@@ -49,13 +49,23 @@
         <div class="feed__body">
           <h1 class="feed__title">{{.Component.Name}}</h1>
           <div class="feed__description">
-            <details>
-              <summary>
-                {{.Component.ShortDescription}}
-                <span class="feed__more">MORE</span>
-              </summary>
+            <input
+              class="feed__description-toggle"
+              id="description-toggle-{{.Component.ID}}"
+              type="checkbox"
+            >
+            <p class="feed__description-short">{{.Component.ShortDescription}}</p>
+            <label
+              class="feed__more feed__description-more"
+              for="description-toggle-{{.Component.ID}}"
+            >MORE</label>
+            <div class="feed__description-expanded">
               <p>{{.Component.Description}}</p>
-            </details>
+              <label
+                class="feed__more feed__description-less"
+                for="description-toggle-{{.Component.ID}}"
+              >LESS</label>
+            </div>
           </div>
           <div class="feed__tags">
             <span class="feed__tag feed__tag--type">
